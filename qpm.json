@@ -1,0 +1,11 @@
+{
+  "name": "blueprint",
+  "description": "Manage your projects with ease",
+  "dependencies": [
+    "com.sonrisesoftware.quickly@0.0.5",
+    "com.sonrisesoftware.sphere@0.0.1"
+  ],
+  "license": "GPL_3_0",
+  "pri_filename": "",
+  "webpage": ""
+}
