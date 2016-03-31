@@ -1,47 +1,47 @@
 import QtQuick 2.5
-import QtQuick.Controls 1.3
 import QtQuick.Layouts 1.3
+import Material 0.3
 import "app.js" as App
 
 ApplicationWindow {
-    title: "Quickly Skeleton"
+    title: "Blueprint"
     visible: true
-    width: 400
-    height: 500
+    width: 800
+    height: 600
 
-    toolBar: ToolBar {
-        RowLayout {
-            anchors.fill: parent
-            spacing: 8
-
-            TextField {
-                id: textField
-                Layout.fillWidth: true
-                onAccepted: loadUrl(text)
-                placeholderText: "Enter URL here"
-            }
-
-            Button {
-                text: "Go!"
-                onClicked: loadUrl(textField.text)
-            }
-        }
+    theme {
+        primaryColor: 'blue'
+        accentColor: 'green'
+        tabHighlightColor: 'white'
     }
 
-    TextArea {
-        id: textArea
-        anchors {
-            fill: parent
-            margins: 8
+    initialPage: TabbedPage {
+        title: 'Blueprint'
+
+        actions: [
+            Action {
+                iconName: 'content/add'
+                text: 'Create new project'
+            },
+            Action {
+                iconName: 'action/settings'
+                text: 'Settings'
+            }
+        ]
+
+        Tab {
+            iconName: 'action/dashboard'
+            title: 'Overview'
         }
 
-        text: "Enter a URL to view the source"
-    }
+        Tab {
+            iconName: 'action/list'
+            title: 'Timeline'
+        }
 
-    function loadUrl(url) {
-        App.loadUrl(url)
-            .then(function(text) {
-                textArea.text = text;
-            })
+        Tab {
+            iconName: 'custom/cube'
+            title: 'Projects'
+        }
     }
 }

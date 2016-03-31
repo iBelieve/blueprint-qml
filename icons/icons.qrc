@@ -1,0 +1,14 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+
+<qresource prefix="/icons/action">
+	<file alias="dashboard.svg">action_dashboard.svg</file>
+	<file alias="list.svg">action_list.svg</file>
+	<file alias="settings.svg">action_settings.svg</file>
+</qresource>
+
+<qresource prefix="/icons/content">
+	<file alias="add.svg">content_add.svg</file>
+</qresource>
+
+</RCC>
