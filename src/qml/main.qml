@@ -2,6 +2,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.3
 import Material 0.3
 import "app.js" as App
+import "ui"
 
 ApplicationWindow {
     title: "Blueprint"
@@ -11,17 +12,19 @@ ApplicationWindow {
 
     theme {
         primaryColor: 'blue'
-        accentColor: 'green'
+        accentColor: 'blue'
         tabHighlightColor: 'white'
     }
 
     initialPage: TabbedPage {
         title: 'Blueprint'
+        actionBar.integratedTabBar: true
 
         actions: [
             Action {
                 iconName: 'content/add'
                 text: 'Create new project'
+                onTriggered: newProjectDialog.show()
             },
             Action {
                 iconName: 'action/settings'
@@ -29,19 +32,30 @@ ApplicationWindow {
             }
         ]
 
-        Tab {
-            iconName: 'action/dashboard'
-            title: 'Overview'
-        }
+        // Tab {
+        //     iconName: 'action/dashboard'
+        //     title: 'Overview'
+        // }
+        //
+        // Tab {
+        //     iconName: 'action/list'
+        //     title: 'Timeline'
+        // }
 
-        Tab {
-            iconName: 'action/list'
-            title: 'Timeline'
+        ProjectsTab {
+            id: projectsTab
         }
+    }
 
-        Tab {
-            iconName: 'custom/cube'
-            title: 'Projects'
+    InputDialog {
+        id: newProjectDialog
+
+        title: "Create New Project"
+        placeholderText: "Project name"
+        positiveButtonText: "Create"
+
+        onAccepted: {
+            new App.Project(text).save()
         }
     }
 }

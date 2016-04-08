@@ -1,5 +1,7 @@
 icons:
+  - action/bug_report
   - action/dashboard
   - action/list
   - action/settings
   - content/add
+  - toggle/star_half

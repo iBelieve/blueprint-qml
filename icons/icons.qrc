@@ -2,6 +2,7 @@
 <RCC version="1.0">
 
 <qresource prefix="/icons/action">
+	<file alias="bug_report.svg">action_bug_report.svg</file>
 	<file alias="dashboard.svg">action_dashboard.svg</file>
 	<file alias="list.svg">action_list.svg</file>
 	<file alias="settings.svg">action_settings.svg</file>
@@ -9,6 +10,10 @@
 
 <qresource prefix="/icons/content">
 	<file alias="add.svg">content_add.svg</file>
+</qresource>
+
+<qresource prefix="/icons/toggle">
+	<file alias="star_half.svg">toggle_star_half.svg</file>
 </qresource>
 
 </RCC>
